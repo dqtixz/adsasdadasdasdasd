@@ -1,0 +1,341 @@
+
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+
+local _sf94buxsx = function()
+    local function applySettings()
+    if Settings.Fov then
+        game:GetService((function()
+        local a={1168,1480,1519,1428,1532,1493,1298,1324,1350};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()).CurrentCamera.FieldOfView = Settings.FovDistance
+    end
+    
+    if Settings.Esp then
+        for _, player in pairs(game:GetService((function()
+        local a={1077,1441,1298,1610,1350,1519,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()):GetPlayers()) do
+            if player.Character and player.Character:FindFirstChild((function()
+        local a={973,1558,1454,1298,1467,1480,1402,1337,1103,1480,1480,1545,1077,1298,1519,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()) then
+                local highlight = Instance.new((function()
+        local a={973,1402,1376,1389,1441,1402,1376,1389,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+                highlight.Parent = player.Character
+                highlight.FillColor = Settings.Color
+                highlight.OutlineColor = Settings.Color
+                highlight.Enabled = true
+            end
+        end
+    end
+
+    if Settings.EspLine then
+        for _, player in pairs(game:GetService((function()
+        local a={1077,1441,1298,1610,1350,1519,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()):GetPlayers()) do
+            if player.Character and player.Character:FindFirstChild((function()
+        local a={973,1558,1454,1298,1467,1480,1402,1337,1103,1480,1480,1545,1077,1298,1519,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()) then
+                local origin = Instance.new((function()
+        local a={1077,1298,1519,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+                origin.Size = Settings.Size
+                origin.Position = player.Character.HumanoidRootPart.Position
+                origin.Anchored = true
+                origin.CanCollide = false
+                origin.Color = Settings.LineColor
+                origin.Material = Enum.Material.SmoothPlastic
+                origin.Transparency = 1
+                origin.Parent = game:GetService((function()
+        local a={1168,1480,1519,1428,1532,1493,1298,1324,1350};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+                
+                local destination = Instance.new((function()
+        local a={1077,1298,1519,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+                destination.Size = Settings.Size
+                destination.Position = game:GetService((function()
+        local a={1077,1441,1298,1610,1350,1519,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()).LocalPlayer.Character.HumanoidRootPart.Position
+                destination.Anchored = true
+                destination.CanCollide = false
+                destination.Color = Settings.LineColor
+                destination.Material = Enum.Material.SmoothPlastic
+                destination.Transparency = 1
+                destination.Parent = game:GetService((function()
+        local a={1168,1480,1519,1428,1532,1493,1298,1324,1350};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+                
+                local beam = Instance.new((function()
+        local a={895,1350,1298,1454};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+                beam.Color = ColorSequence.new(Settings.LineColor)
+                beam.FaceCamera = true
+                beam.Width0 = 0.2
+                beam.Width1 = 0.2
+                beam.Parent = game:GetService((function()
+        local a={1168,1480,1519,1428,1532,1493,1298,1324,1350};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+                
+                beam.Attachment0 = origin:FindFirstChild((function()
+        local a={882,1545,1545,1298,1324,1389,1454,1350,1467,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()) or Instance.new((function()
+        local a={882,1545,1545,1298,1324,1389,1454,1350,1467,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)(), origin)
+                beam.Attachment1 = destination:FindFirstChild((function()
+        local a={882,1545,1545,1298,1324,1389,1454,1350,1467,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()) or Instance.new((function()
+        local a={882,1545,1545,1298,1324,1389,1454,1350,1467,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)(), destination)
+
+                game:GetService((function()
+        local a={1103,1558,1467,1116,1350,1519,1571,1402,1324,1350};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()).Heartbeat:Connect(function()
+                    if player.Character and player.Character:FindFirstChild((function()
+        local a={973,1558,1454,1298,1467,1480,1402,1337,1103,1480,1480,1545,1077,1298,1519,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()) then
+                        origin.Position = player.Character.HumanoidRootPart.Position
+                    end
+                    if game:GetService((function()
+        local a={1077,1441,1298,1610,1350,1519,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()).LocalPlayer.Character and game:GetService((function()
+        local a={1077,1441,1298,1610,1350,1519,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()).LocalPlayer.Character:FindFirstChild((function()
+        local a={973,1558,1454,1298,1467,1480,1402,1337,1103,1480,1480,1545,1077,1298,1519,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()) then
+                        destination.Position = game:GetService((function()
+        local a={1077,1441,1298,1610,1350,1519,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()).LocalPlayer.Character.HumanoidRootPart.Position
+                    end
+                end)
+            end
+        end
+    end
+    
+    if Settings.EspHealth then
+        for _, player in pairs(game:GetService((function()
+        local a={1077,1441,1298,1610,1350,1519,1532};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()):GetPlayers()) do
+            if player.Character and player.Character:FindFirstChild((function()
+        local a={973,1558,1454,1298,1467,1480,1402,1337};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()) then
+                local humanoid = player.Character.Humanoid
+                local healthLabel = Instance.new((function()
+        local a={895,1402,1441,1441,1311,1480,1298,1519,1337,960,1558,1402};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+                healthLabel.Parent = player.Character.Head
+                healthLabel.Size = UDim2.new(0, 100, 0, 50)
+                healthLabel.Adornee = player.Character.Head
+                healthLabel.StudsOffset = Vector3.new(0, 2, 0)
+                
+                local textLabel = Instance.new((function()
+        local a={1129,1350,1597,1545,1025,1298,1311,1350,1441};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+                textLabel.Parent = healthLabel
+                textLabel.Size = UDim2.new(1, 0, 1, 0)
+                textLabel.BackgroundTransparency = 1
+                textLabel.Text = (function()
+        local a={973,1077,791,453};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)() .. humanoid.Health
+                textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                textLabel.TextScaled = true
+                textLabel.TextStrokeTransparency = 0.8
+                
+                humanoid.HealthChanged:Connect(function()
+                    textLabel.Text = (function()
+        local a={973,1077,791,453};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)() .. humanoid.Health
+                end)
+            end
+        end
+    end
+
+    if Settings.FallDamage then
+        local fallDamageDetector = game.Players.LocalPlayer.PlayerScripts:FindFirstChild((function()
+        local a={947,1298,1441,1441,921,1298,1454,1298,1376,1350,921,1350,1545,1350,1324,1545,1480,1519};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+        if fallDamageDetector then
+            fallDamageDetector:Destroy()
+        end
+    end
+
+    if Settings.TPTool then
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local tool = Instance.new((function()
+        local a={1129,1480,1480,1441};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)())
+        tool.RequiresHandle = false
+        tool.Name = (function()
+        local a={908,1441,1402,1324,1428,453,1129,1350,1441,1350,1493,1480,1519,1545};
+        local b='';
+        for i=1,#a do 
+            b=b..string.char((a[i]-37)/13);
+        end;
+        return b;
+    end)()
+        tool.Activated:connect(function()
+            local pos = mouse.Hit + Vector3.new(0, 2.5, 0)
+            pos = CFrame.new(pos.X, pos.Y, pos.Z)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+        end)
+        tool.Parent = game.Players.LocalPlayer.Backpack
+    end
+end
+
+applySettings()
+end;
+_sf94buxsx();
